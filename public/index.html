@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card Duel Online</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+<header>
+<h2>♠ CARD <span>DUEL</span></h2>
+<p>ONLINE POKER</p>
+</header>
 
+<section class="hero">
+<h1>เล่นไพ่ ประลองฝีมือ</h1>
+<p>เกมไพ่ Texas-style สำหรับ 2 คน</p>
+</section>
+
+<section class="panel" id="lobby">
+<h2>เข้าร่วมโต๊ะ</h2>
+<input id="playerName" placeholder="ชื่อผู้เล่น" value="Player">
+<button id="createBtn">สร้างห้องใหม่</button>
+<div class="join">
+<input id="roomCode" placeholder="รหัสห้อง">
+<button id="joinBtn">เข้าห้อง</button>
+</div>
+</section>
+
+<section class="panel hidden" id="table">
+<h2>ห้อง <span id="codeLabel"></span></h2>
+<div id="players"></div>
+<div class="felt">
+<p id="status">รอผู้เล่น...</p>
+<div id="myCards" class="cards"></div>
+<div id="opponentCards" class="cards"></div>
+<button id="readyBtn">พร้อมเล่น</button>
+<button id="revealBtn" class="hidden">เปิดผลไพ่</button>
+<button id="againBtn" class="hidden">เล่นรอบใหม่</button>
+</div>
+<div id="result"></div>
+<button id="copyBtn">คัดลอกรหัสห้อง</button>
+<button id="leaveBtn">ออกจากห้อง</button>
+</section>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
